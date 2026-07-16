@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puerto Pub Crawl — Ruta Tour de Fiesta en Puerto Escondido</title>
+<meta name="description" content="El pub crawl bilingüe de Puerto Escondido. Barra libre, retos y una ruta por los mejores clubs de Zicatela. Viernes y sábado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dusk:#241537;
+    --dusk-2:#3a2154;
+    --coral:#FF6E4E;
+    --magenta:#E63E82;
+    --violet:#6B3FA0;
+    --teal:#0FA89A;
+    --sand:#FFF4E7;
+    --ink:#20132f;
+    --ink-soft:#513a63;
+    --paper:#FFFDF9;
+    --radius:18px;
+    --shadow: 0 12px 30px rgba(36,21,55,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2', sans-serif;
+    line-height:1.05;
+    margin:0;
+  }
+  .script{font-family:'Caveat', cursive;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+  section{padding:76px 0;}
+  .eyebrow{
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:.72rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:120px 0 70px;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 20% 0%, rgba(255,159,90,.55), transparent 55%),
+      linear-gradient(195deg, #FF8A5B 0%, #E63E82 38%, #6B3FA0 72%, #0FA89A 100%);
+    color:#fff;
+    isolation:isolate;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: radial-gradient(rgba(255,255,255,.5) 1px, transparent 1.4px);
+    background-size:26px 26px;
+    opacity:.12;
+    z-index:-1;
+  }
+  .hero-compass{
+    position:absolute;
+    top:36px; left:22px;
+    width:58px; height:58px;
+    opacity:.55;
+  }
+  .hero .eyebrow{color:#FFE7D6; display:flex; align-items:center; gap:8px;}
+  .hero .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#FFE7D6;display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.9rem, 11vw, 5.4rem);
+    font-weight:800;
+    margin-top:14px;
+    text-shadow:0 6px 22px rgba(0,0,0,.18);
+    letter-spacing:.01em;
+  }
+  .hero h1 span{
+    display:block;
+    font-size:.34em;
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    margin-top:2px;
+    color:#FFE7D6;
+  }
+  .hero p.lede{
+    max-width:520px;
+    font-size:1.14rem;
+    margin-top:20px;
+    color:#FFF3EC;
+    font-weight:500;
+  }
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:32px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Work Sans',sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    padding:16px 26px;
+    border-radius:100px;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:#1FBE9A;
+    color:#0C2E28;
+    box-shadow:0 10px 24px rgba(15,168,154,.4);
+  }
+  .btn-ghost{
+    border-color:rgba(255,255,255,.65);
+    color:#fff;
+  }
+  .hero-trust{
+    margin-top:44px;
+    font-size:.9rem;
+    color:#FFE7D6;
+    display:flex; gap:10px; align-items:center;
+    flex-wrap:wrap;
+  }
+  .hero-trust b{color:#fff;}
+  .scroll-cue{
+    position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
+    font-size:.7rem; letter-spacing:.18em; text-transform:uppercase;
+    color:#FFE7D6; opacity:.8;
+  }
+
+  /* ---------- PILLARS ---------- */
+  .pillars{background:var(--sand);}
+  .pillars-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:40px;
+  }
+  .pillar{
+    background:var(--paper);
+    border-radius:var(--radius);
+    padding:28px 22px;
+    box-shadow:var(--shadow);
+  }
+  .pillar .ico{font-size:1.8rem;}
+  .pillar h3{font-size:1.15rem; margin-top:12px; color:var(--ink);}
+  .pillar p{font-size:.94rem; color:var(--ink-soft); margin-top:8px; line-height:1.5;}
+  .section-head{max-width:600px;}
+  .section-head .eyebrow{color:var(--magenta);}
+  .section-head h2{font-size:clamp(1.9rem,5vw,2.6rem); margin-top:10px; color:var(--ink);}
+  .section-head p{color:var(--ink-soft); margin-top:12px; font-size:1.02rem;}
+
+  /* ---------- ROUTE ---------- */
+  .route{background:var(--dusk); color:#fff; position:relative;}
+  .route .section-head .eyebrow{color:#FFB694;}
+  .route .section-head h2{color:#fff;}
+  .route .section-head p{color:#D9CBEA;}
+  .day-toggle{
+    display:inline-flex; background:rgba(255,255,255,.08);
+    border-radius:100px; padding:5px; margin-top:26px;
+    border:1px solid rgba(255,255,255,.18);
+  }
+  .day-toggle button{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    padding:11px 24px;
+    border-radius:100px;
+    border:none;
+    background:transparent;
+    color:#D9CBEA;
+    cursor:pointer;
+    transition:.2s;
+  }
+  .day-toggle button.active{
+    background:linear-gradient(120deg,#FF8A5B,#E63E82);
+    color:#fff;
+  }
+  .route-price{
+    display:inline-block;
+    margin-top:22px; margin-left:10px;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    color:#FFD8A8;
+    font-size:1rem;
+  }
+  .route-map{
+    position:relative;
+    margin-top:52px;
+    padding-left:34px;
+  }
+  .route-line{
+    position:absolute;
+    left:11px; top:6px; bottom:6px;
+    width:4px;
+    background:repeating-linear-gradient(180deg,#FF8A5B 0 10px, transparent 10px 20px);
+    border-radius:4px;
+  }
+  .stop{
+    position:relative;
+    padding:0 0 44px 26px;
+  }
+  .stop:last-child{padding-bottom:0;}
+  .stop-marker{
+    position:absolute;
+    left:-34px; top:-2px;
+    width:26px; height:26px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#FF8A5B,#E63E82);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:.85rem;
+    box-shadow:0 0 0 5px var(--dusk), 0 0 0 6px rgba(255,255,255,.18);
+  }
+  .stop-time{font-size:.78rem; color:#FFB694; font-weight:700; letter-spacing:.05em;}
+  .stop h3{font-size:1.25rem; margin-top:5px; font-family:'Baloo 2',sans-serif; color:#fff;}
+  .stop p{font-size:.92rem; color:#D9CBEA; margin-top:4px;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-top:40px;
+  }
+  .gallery-grid img{
+    width:100%; height:260px; object-fit:cover;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+  }
+  .gallery-grid a:nth-child(4) img{height:260px;}
+
+  /* ---------- PRICE ---------- */
+  .price{background:var(--sand);}
+  .price-card{
+    margin-top:40px;
+    background:linear-gradient(135deg,#241537,#3a2154);
+    color:#fff;
+    border-radius:24px;
+    padding:44px 34px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:36px;
+    align-items:center;
+    box-shadow:var(--shadow);
+  }
+  .price-tag{text-align:center;}
+  .price-tag .amount{
+    font-family:'Baloo 2',sans-serif;
+    font-size:3.4rem;
+    font-weight:800;
+    color:#1FBE9A;
+    line-height:1;
+  }
+  .price-tag .curr{font-size:1rem; color:#D9CBEA; margin-top:6px;}
+  .price-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+  .price-list li{
+    font-size:.98rem; color:#F1E9FB;
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .price-list li::before{content:"✓"; color:#1FBE9A; font-weight:800;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{margin-top:36px; border-top:1px solid #EADFCC;}
+  .faq-item{border-bottom:1px solid #EADFCC; padding:22px 0;}
+  .faq-item summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:1.08rem;
+    color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    font-size:1.6rem; color:var(--magenta); font-weight:400;
+    transition:transform .2s;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{color:var(--ink-soft); margin-top:12px; font-size:.96rem; line-height:1.55;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:linear-gradient(200deg,#0FA89A,#6B3FA0 60%,#E63E82);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{font-size:clamp(2rem,6vw,3rem); color:#fff;}
+  .final-cta p.script{font-size:1.6rem; color:#FFE7D6; margin-top:10px;}
+  .final-cta .cta-row{justify-content:center; margin-top:30px;}
+
+  footer{
+    background:var(--dusk); color:#D9CBEA;
+    padding:36px 0; text-align:center; font-size:.86rem;
+  }
+  footer a{color:#FFB694; text-decoration:none; font-weight:600;}
+
+  @media (max-width: 820px){
+    .pillars-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid img{height:200px;}
+    .price-card{grid-template-columns:1fr; text-align:center;}
+    section{padding:58px 0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .btn:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <svg class="hero-compass" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="50" cy="50" r="46" stroke="white" stroke-width="1.5"/>
+    <path d="M50 8 L56 50 L50 92 L44 50 Z" fill="white" opacity="0.85"/>
+    <path d="M8 50 L50 44 L92 50 L50 56 Z" fill="white" opacity="0.55"/>
+    <text x="50" y="20" fill="white" font-size="9" text-anchor="middle" font-family="Work Sans">N</text>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">Zicatela · Puerto Escondido, Oaxaca</p>
+    <h1>PUERTO PUB CRAWL<span>la ruta tour de fiesta más comentada de Puerto</span></h1>
+    <p class="lede">Barra libre, retos y una ruta guiada por los mejores bares y clubs de la playa. Tour bilingüe: conoces mexicanos y viajeros de todo el mundo en un ambiente relajado y respetuoso.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/529542027701?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20Puerto%20Pub%20Crawl" target="_blank" rel="noopener">
+        Reservar por WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#ruta">Ver la ruta</a>
+    </div>
+    <div class="hero-trust">
+      <span><b>Viernes y sábado</b> · 8:30 PM</span>
+      <span>·</span>
+      <span><b>$500 MXN</b> todo incluido</span>
+      <span>·</span>
+      <span>Sigue la fiesta en <a href="https://instagram.com/pub_crawl_puerto" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">@pub_crawl_puerto</a></span>
+    </div>
+  </div>
+  <div class="scroll-cue">Desliza ↓</div>
+</header>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Por qué unirte</p>
+      <h2>No es un tour, es cómo se sale de fiesta en Puerto</h2>
+      <p>Llegamos a Puerto Escondido buscando dónde salir y encontramos esto: la única ruta de fiesta guiada de la zona, hecha por gente que vive y respira Zicatela.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="ico">🌍</div>
+        <h3>Bilingüe, de verdad</h3>
+        <p>Guías en español e inglés. El grupo mezcla mexicanos de todo el país con viajeros de medio mundo — así se conoce gente en serio.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico">🤝</div>
+        <h3>Ambiente cuidado</h3>
+        <p>Grupos con buena vibra y respeto entre todos. Vas solo, en pareja o en grupo y sales acompañado.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico">🍹</div>
+        <h3>Todo incluido, sin sorpresas</h3>
+        <p>Barra libre para arrancar, juegos para romper el hielo, y acceso a 4 lugares distintos en una sola noche.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section class="route" id="ruta">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">La ruta</p>
+      <h2>Una noche, cuatro paradas</h2>
+      <p>Empezamos con barra libre y juegos para calentar motores, y de ahí seguimos la ruta por Zicatela hasta cerrar en un club distinto cada noche.</p>
+    </div>
+
+    <div class="day-toggle" role="tablist" aria-label="Elegir día">
+      <button type="button" class="active" data-day="viernes" role="tab" aria-selected="true">Viernes</button>
+      <button type="button" data-day="sabado" role="tab" aria-selected="false">Sábado</button>
+    </div>
+    <span class="route-price">$500 MXN · todo incluido</span>
+
+    <div class="route-map">
+      <div class="route-line" aria-hidden="true"></div>
+
+      <div id="stops-viernes">
+        <div class="stop">
+          <div class="stop-marker">1</div>
+          <div class="stop-time">8:30 PM · Surf Nest Hostel</div>
+          <h3>Open bar + drinking games</h3>
+          <p>50 minutos de barra libre y juegos para romper el hielo con el grupo.</p>
+        </div>
+        <div class="stop">
+          <div class="stop-marker">2</div>
+          <div class="stop-time">Straw Hat</div>
+          <h3>Torneo de beer pong</h3>
+          <p>Se arma el primer reto de la noche — equipos, mesas y mucha risa.</p>
+        </div>
+        <div class="stop">
+          <div class="stop-marker">3</div>
+          <div class="stop-time">Cactus Beach Club</div>
+          <h3>Reggaetón en la playa</h3>
+          <p>Bajamos a pie de playa a bailar con los pies en la arena.</p>
+        </div>
+        <div class="stop">
+          <div class="stop-marker">4</div>
+          <div class="stop-time">Dura Techno</div>
+          <h3>After techno duro</h3>
+          <p>Cerramos la noche fuerte para quien todavía tiene batería.</p>
+        </div>
+      </div>
+
+      <div id="stops-sabado" style="display:none;">
+        <div class="stop">
+          <div class="stop-marker">1</div>
+          <div class="stop-time">8:30 PM · Surf Nest Hostel</div>
+          <h3>Open bar + drinking games</h3>
+          <p>50 minutos de barra libre y juegos para romper el hielo con el grupo.</p>
+        </div>
+        <div class="stop">
+          <div class="stop-marker">2</div>
+          <div class="stop-time">Straw Hat</div>
+          <h3>Pool party</h3>
+          <p>Alberca, música y el segundo aire de la noche.</p>
+        </div>
+        <div class="stop">
+          <div class="stop-marker">3</div>
+          <div class="stop-time">Mar&amp;Wanna</div>
+          <h3>Perro salvaje</h3>
+          <p>Hora y media en uno de los puntos más animados de la ruta.</p>
+        </div>
+        <div class="stop">
+          <div class="stop-marker">4</div>
+          <div class="stop-time">Cactus Beach Club</div>
+          <h3>Reggaetón + techno</h3>
+          <p>Cerramos la noche a pie de playa, con todo el grupo junto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">La fiesta, en fotos</p>
+      <h2>Así se ve una noche de ruta</h2>
+      <p>Grupos internacionales, disfraces improvisados y muchas caras nuevas — esto es lo que te espera.</p>
+    </div>
+    <div class="gallery-grid">
+      <a href="assets/gallery-1.png" target="_blank" rel="noopener"><img src="assets/gallery-1.png" alt="Grupo de viajeros posando de noche en Puerto Pub Crawl" loading="lazy"></a>
+      <a href="assets/gallery-2.png" target="_blank" rel="noopener"><img src="assets/gallery-2.png" alt="Grupo grande celebrando en un bar decorado de Puerto Escondido" loading="lazy"></a>
+      <a href="assets/gallery-3.png" target="_blank" rel="noopener"><img src="assets/gallery-3.png" alt="Amigas sonriendo durante el pub crawl" loading="lazy"></a>
+      <a href="assets/gallery-4.png" target="_blank" rel="noopener"><img src="assets/gallery-4.png" alt="Grupo grande de fiesta junto a la alberca" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Precio</p>
+      <h2>Una noche completa, un solo pago</h2>
+    </div>
+    <div class="price-card">
+      <div class="price-tag">
+        <div class="amount">$500</div>
+        <div class="curr">pesos MXN / persona</div>
+      </div>
+      <ul class="price-list">
+        <li>50 minutos de barra libre para arrancar</li>
+        <li>Juegos y retos para romper el hielo</li>
+        <li>Acceso guiado a 4 bares y clubs de Zicatela</li>
+        <li>Guía bilingüe (español / inglés) toda la noche</li>
+        <li>Grupo internacional — viajas solo y sales acompañado</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Antes de reservar</p>
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>¿Dónde es el punto de encuentro?</summary>
+        <p>En Surf Nest Hostel, a las 8:30 PM. De ahí arrancamos juntos toda la ruta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuál es la edad mínima?</summary>
+        <p>18 años. Es un tour de vida nocturna con barra libre incluida.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo ir solo/a?</summary>
+        <p>Sí — de hecho la mayoría llega sola o en grupos pequeños. Es una de las mejores formas de conocer gente nueva en Puerto.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué días hay tour?</summary>
+        <p>Viernes y sábado, todas las semanas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo reservo mi lugar?</summary>
+        <p>Directo por WhatsApp o por Instagram — te confirmamos cupo y forma de pago al momento.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Nos vemos en Surf Nest, 8:30 PM</h2>
+    <p class="script">viernes o sábado — tú eliges</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/529542027701?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20Puerto%20Pub%20Crawl" target="_blank" rel="noopener">
+        Reservar mi lugar
+      </a>
+      <a class="btn btn-ghost" href="https://instagram.com/pub_crawl_puerto" target="_blank" rel="noopener">
+        Ver Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Puerto Pub Crawl · Zicatela, Puerto Escondido, Oaxaca</p>
+    <p><a href="https://wa.me/529542027701" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://instagram.com/pub_crawl_puerto" target="_blank" rel="noopener">@pub_crawl_puerto</a></p>
+  </div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.day-toggle button');
+  const viernes = document.getElementById('stops-viernes');
+  const sabado = document.getElementById('stops-sabado');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      if(btn.dataset.day === 'viernes'){
+        viernes.style.display = '';
+        sabado.style.display = 'none';
+      } else {
+        viernes.style.display = 'none';
+        sabado.style.display = '';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

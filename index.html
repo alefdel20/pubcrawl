@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Puerto Pub Crawl — Ruta Tour de Fiesta en Puerto Escondido</title>
 <meta name="description" content="El pub crawl bilingüe de Puerto Escondido. Barra libre, retos y una ruta por los mejores clubs de Zicatela. Viernes y sábado.">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="apple-touch-icon" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -80,6 +82,17 @@
   }
   .hero .eyebrow{color:#FFE7D6; display:flex; align-items:center; gap:8px;}
   .hero .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#FFE7D6;display:inline-block;}
+  .hero-brand{
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  }
+  .hero-logo{
+    width:72px; height:72px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,.75);
+    box-shadow:0 8px 20px rgba(0,0,0,.28);
+    flex-shrink:0;
+  }
   .hero h1{
     font-size:clamp(2.9rem, 11vw, 5.4rem);
     font-weight:800;
@@ -313,6 +326,7 @@
     .gallery-grid img{height:200px;}
     .price-card{grid-template-columns:1fr; text-align:center;}
     section{padding:58px 0;}
+    .hero-logo{width:54px; height:54px;}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
@@ -331,7 +345,10 @@
     <text x="50" y="20" fill="white" font-size="9" text-anchor="middle" font-family="Work Sans">N</text>
   </svg>
   <div class="wrap">
-    <p class="eyebrow">Zicatela · Puerto Escondido, Oaxaca</p>
+    <div class="hero-brand">
+      <img src="assets/logo.jpg" alt="Puerto Pub Crawl" class="hero-logo">
+      <p class="eyebrow">Zicatela · Puerto Escondido, Oaxaca</p>
+    </div>
     <h1>PUERTO PUB CRAWL<span>la ruta tour de fiesta más comentada de Puerto</span></h1>
     <p class="lede">Barra libre, retos y una ruta guiada por los mejores bares y clubs de la playa. Tour bilingüe: conoces mexicanos y viajeros de todo el mundo en un ambiente relajado y respetuoso.</p>
     <div class="cta-row">

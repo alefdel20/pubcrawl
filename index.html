@@ -82,6 +82,10 @@
   }
   .hero .eyebrow{color:#FFE7D6; display:flex; align-items:center; gap:8px;}
   .hero .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#FFE7D6;display:inline-block;}
+  .hero-top{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:14px; flex-wrap:wrap;
+  }
   .hero-brand{
     display:flex; align-items:center; gap:14px; flex-wrap:wrap;
   }
@@ -92,6 +96,28 @@
     border:2px solid rgba(255,255,255,.75);
     box-shadow:0 8px 20px rgba(0,0,0,.28);
     flex-shrink:0;
+  }
+  .lang-toggle{
+    display:inline-flex; background:rgba(255,255,255,.12);
+    border-radius:100px; padding:4px;
+    border:1px solid rgba(255,255,255,.35);
+    flex-shrink:0;
+  }
+  .lang-btn{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:.8rem;
+    padding:8px 16px;
+    border-radius:100px;
+    border:none;
+    background:transparent;
+    color:#FFE7D6;
+    cursor:pointer;
+    transition:.2s;
+  }
+  .lang-btn.active{
+    background:#fff;
+    color:var(--dusk);
   }
   .hero h1{
     font-size:clamp(2.9rem, 11vw, 5.4rem);
@@ -345,52 +371,58 @@
     <text x="50" y="20" fill="white" font-size="9" text-anchor="middle" font-family="Work Sans">N</text>
   </svg>
   <div class="wrap">
-    <div class="hero-brand">
-      <img src="assets/logo.jpg" alt="Puerto Pub Crawl" class="hero-logo">
-      <p class="eyebrow">Zicatela · Puerto Escondido, Oaxaca</p>
+    <div class="hero-top">
+      <div class="hero-brand">
+        <img src="assets/logo.jpg" alt="Puerto Pub Crawl" class="hero-logo">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Zicatela · Puerto Escondido, Oaxaca</p>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
     </div>
-    <h1>PUERTO PUB CRAWL<span>la ruta tour de fiesta más comentada de Puerto</span></h1>
-    <p class="lede">Barra libre, retos y una ruta guiada por los mejores bares y clubs de la playa. Tour bilingüe: conoces mexicanos y viajeros de todo el mundo en un ambiente relajado y respetuoso.</p>
+    <h1>PUERTO PUB CRAWL<span data-i18n="hero.tagline">la ruta tour de fiesta más comentada de Puerto</span></h1>
+    <p class="lede" data-i18n="hero.lede">Barra libre, retos y una ruta guiada por los mejores bares y clubs de la playa. Tour bilingüe: conoces mexicanos y viajeros de todo el mundo en un ambiente relajado y respetuoso.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://wa.me/529542027701?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20Puerto%20Pub%20Crawl" target="_blank" rel="noopener">
-        Reservar por WhatsApp
+        <span data-i18n="hero.ctaWhatsapp">Reservar por WhatsApp</span>
       </a>
-      <a class="btn btn-ghost" href="#ruta">Ver la ruta</a>
+      <a class="btn btn-ghost" href="#ruta"><span data-i18n="hero.ctaViewRoute">Ver la ruta</span></a>
     </div>
     <div class="hero-trust">
-      <span><b>Viernes y sábado</b> · 8:30 PM</span>
+      <span><b data-i18n="hero.trustDays">Viernes y sábado</b> · 8:30 PM</span>
       <span>·</span>
-      <span><b>$500 MXN</b> todo incluido</span>
+      <span><b>$500 MXN</b> <span data-i18n="hero.trustIncluded">todo incluido</span></span>
       <span>·</span>
-      <span>Sigue la fiesta en <a href="https://instagram.com/pub_crawl_puerto" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">@pub_crawl_puerto</a></span>
+      <span><span data-i18n="hero.trustFollow">Sigue la fiesta en</span> <a href="https://instagram.com/pub_crawl_puerto" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">@pub_crawl_puerto</a></span>
     </div>
   </div>
-  <div class="scroll-cue">Desliza ↓</div>
+  <div class="scroll-cue" data-i18n="hero.scrollCue">Desliza ↓</div>
 </header>
 
 <!-- PILLARS -->
 <section class="pillars">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Por qué unirte</p>
-      <h2>No es un tour, es cómo se sale de fiesta en Puerto</h2>
-      <p>Llegamos a Puerto Escondido buscando dónde salir y encontramos esto: la única ruta de fiesta guiada de la zona, hecha por gente que vive y respira Zicatela.</p>
+      <p class="eyebrow" data-i18n="pillars.eyebrow">Por qué unirte</p>
+      <h2 data-i18n="pillars.h2">No es un tour, es cómo se sale de fiesta en Puerto</h2>
+      <p data-i18n="pillars.body">Llegamos a Puerto Escondido buscando dónde salir y encontramos esto: la única ruta de fiesta guiada de la zona, hecha por gente que vive y respira Zicatela.</p>
     </div>
     <div class="pillars-grid">
       <div class="pillar">
         <div class="ico">🌍</div>
-        <h3>Bilingüe, de verdad</h3>
-        <p>Guías en español e inglés. El grupo mezcla mexicanos de todo el país con viajeros de medio mundo — así se conoce gente en serio.</p>
+        <h3 data-i18n="pillars.p1.title">Bilingüe, de verdad</h3>
+        <p data-i18n="pillars.p1.body">Guías en español e inglés. El grupo mezcla mexicanos de todo el país con viajeros de medio mundo — así se conoce gente en serio.</p>
       </div>
       <div class="pillar">
         <div class="ico">🤝</div>
-        <h3>Ambiente cuidado</h3>
-        <p>Grupos con buena vibra y respeto entre todos. Vas solo, en pareja o en grupo y sales acompañado.</p>
+        <h3 data-i18n="pillars.p2.title">Ambiente cuidado</h3>
+        <p data-i18n="pillars.p2.body">Grupos con buena vibra y respeto entre todos. Vas solo, en pareja o en grupo y sales acompañado.</p>
       </div>
       <div class="pillar">
         <div class="ico">🍹</div>
-        <h3>Todo incluido, sin sorpresas</h3>
-        <p>Barra libre para arrancar, juegos para romper el hielo, y acceso a 4 lugares distintos en una sola noche.</p>
+        <h3 data-i18n="pillars.p3.title">Todo incluido, sin sorpresas</h3>
+        <p data-i18n="pillars.p3.body">Barra libre para arrancar, juegos para romper el hielo, y acceso a 4 lugares distintos en una sola noche.</p>
       </div>
     </div>
   </div>
@@ -400,16 +432,16 @@
 <section class="route" id="ruta">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">La ruta</p>
-      <h2>Una noche, cuatro paradas</h2>
-      <p>Empezamos con barra libre y juegos para calentar motores, y de ahí seguimos la ruta por Zicatela hasta cerrar en un club distinto cada noche.</p>
+      <p class="eyebrow" data-i18n="route.eyebrow">La ruta</p>
+      <h2 data-i18n="route.h2">Una noche, cuatro paradas</h2>
+      <p data-i18n="route.body">Empezamos con barra libre y juegos para calentar motores, y de ahí seguimos la ruta por Zicatela hasta cerrar en un club distinto cada noche.</p>
     </div>
 
     <div class="day-toggle" role="tablist" aria-label="Elegir día">
-      <button type="button" class="active" data-day="viernes" role="tab" aria-selected="true">Viernes</button>
-      <button type="button" data-day="sabado" role="tab" aria-selected="false">Sábado</button>
+      <button type="button" class="active" data-day="viernes" role="tab" aria-selected="true" data-i18n="route.dayFriday">Viernes</button>
+      <button type="button" data-day="sabado" role="tab" aria-selected="false" data-i18n="route.daySaturday">Sábado</button>
     </div>
-    <span class="route-price">$500 MXN · todo incluido</span>
+    <span class="route-price">$500 MXN · <span data-i18n="hero.trustIncluded">todo incluido</span></span>
 
     <div class="route-map">
       <div class="route-line" aria-hidden="true"></div>
@@ -418,26 +450,26 @@
         <div class="stop">
           <div class="stop-marker">1</div>
           <div class="stop-time">8:30 PM · Surf Nest Hostel</div>
-          <h3>Open bar + drinking games</h3>
-          <p>50 minutos de barra libre y juegos para romper el hielo con el grupo.</p>
+          <h3 data-i18n="route.viernes.stop1.title">Open bar + drinking games</h3>
+          <p data-i18n="route.viernes.stop1.body">50 minutos de barra libre y juegos para romper el hielo con el grupo.</p>
         </div>
         <div class="stop">
           <div class="stop-marker">2</div>
           <div class="stop-time">Straw Hat</div>
-          <h3>Torneo de beer pong</h3>
-          <p>Se arma el primer reto de la noche — equipos, mesas y mucha risa.</p>
+          <h3 data-i18n="route.viernes.stop2.title">Torneo de beer pong</h3>
+          <p data-i18n="route.viernes.stop2.body">Se arma el primer reto de la noche — equipos, mesas y mucha risa.</p>
         </div>
         <div class="stop">
           <div class="stop-marker">3</div>
           <div class="stop-time">Cactus Beach Club</div>
-          <h3>Reggaetón en la playa</h3>
-          <p>Bajamos a pie de playa a bailar con los pies en la arena.</p>
+          <h3 data-i18n="route.viernes.stop3.title">Reggaetón en la playa</h3>
+          <p data-i18n="route.viernes.stop3.body">Bajamos a pie de playa a bailar con los pies en la arena.</p>
         </div>
         <div class="stop">
           <div class="stop-marker">4</div>
           <div class="stop-time">Dura Techno</div>
-          <h3>After techno duro</h3>
-          <p>Cerramos la noche fuerte para quien todavía tiene batería.</p>
+          <h3 data-i18n="route.viernes.stop4.title">After techno duro</h3>
+          <p data-i18n="route.viernes.stop4.body">Cerramos la noche fuerte para quien todavía tiene batería.</p>
         </div>
       </div>
 
@@ -445,26 +477,26 @@
         <div class="stop">
           <div class="stop-marker">1</div>
           <div class="stop-time">8:30 PM · Surf Nest Hostel</div>
-          <h3>Open bar + drinking games</h3>
-          <p>50 minutos de barra libre y juegos para romper el hielo con el grupo.</p>
+          <h3 data-i18n="route.sabado.stop1.title">Open bar + drinking games</h3>
+          <p data-i18n="route.sabado.stop1.body">50 minutos de barra libre y juegos para romper el hielo con el grupo.</p>
         </div>
         <div class="stop">
           <div class="stop-marker">2</div>
           <div class="stop-time">Straw Hat</div>
-          <h3>Pool party</h3>
-          <p>Alberca, música y el segundo aire de la noche.</p>
+          <h3 data-i18n="route.sabado.stop2.title">Pool party</h3>
+          <p data-i18n="route.sabado.stop2.body">Alberca, música y el segundo aire de la noche.</p>
         </div>
         <div class="stop">
           <div class="stop-marker">3</div>
           <div class="stop-time">Mar&amp;Wanna</div>
-          <h3>Perro salvaje</h3>
-          <p>Hora y media en uno de los puntos más animados de la ruta.</p>
+          <h3 data-i18n="route.sabado.stop3.title">Perro salvaje</h3>
+          <p data-i18n="route.sabado.stop3.body">Hora y media en uno de los puntos más animados de la ruta.</p>
         </div>
         <div class="stop">
           <div class="stop-marker">4</div>
           <div class="stop-time">Cactus Beach Club</div>
-          <h3>Reggaetón + techno</h3>
-          <p>Cerramos la noche a pie de playa, con todo el grupo junto.</p>
+          <h3 data-i18n="route.sabado.stop4.title">Reggaetón + techno</h3>
+          <p data-i18n="route.sabado.stop4.body">Cerramos la noche a pie de playa, con todo el grupo junto.</p>
         </div>
       </div>
     </div>
@@ -475,15 +507,15 @@
 <section class="gallery">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">La fiesta, en fotos</p>
-      <h2>Así se ve una noche de ruta</h2>
-      <p>Grupos internacionales, disfraces improvisados y muchas caras nuevas — esto es lo que te espera.</p>
+      <p class="eyebrow" data-i18n="gallery.eyebrow">La fiesta, en fotos</p>
+      <h2 data-i18n="gallery.h2">Así se ve una noche de ruta</h2>
+      <p data-i18n="gallery.body">Grupos internacionales, disfraces improvisados y muchas caras nuevas — esto es lo que te espera.</p>
     </div>
     <div class="gallery-grid">
-      <a href="assets/gallery-1.png" target="_blank" rel="noopener"><img src="assets/gallery-1.png" alt="Grupo de viajeros posando de noche en Puerto Pub Crawl" loading="lazy"></a>
-      <a href="assets/gallery-2.png" target="_blank" rel="noopener"><img src="assets/gallery-2.png" alt="Grupo grande celebrando en un bar decorado de Puerto Escondido" loading="lazy"></a>
-      <a href="assets/gallery-3.png" target="_blank" rel="noopener"><img src="assets/gallery-3.png" alt="Amigas sonriendo durante el pub crawl" loading="lazy"></a>
-      <a href="assets/gallery-4.png" target="_blank" rel="noopener"><img src="assets/gallery-4.png" alt="Grupo grande de fiesta junto a la alberca" loading="lazy"></a>
+      <a href="assets/gallery-1.png" target="_blank" rel="noopener"><img src="assets/gallery-1.png" alt="Grupo de viajeros posando de noche en Puerto Pub Crawl" data-i18n-alt="gallery.alt1" loading="lazy"></a>
+      <a href="assets/gallery-2.png" target="_blank" rel="noopener"><img src="assets/gallery-2.png" alt="Grupo grande celebrando en un bar decorado de Puerto Escondido" data-i18n-alt="gallery.alt2" loading="lazy"></a>
+      <a href="assets/gallery-3.png" target="_blank" rel="noopener"><img src="assets/gallery-3.png" alt="Amigas sonriendo durante el pub crawl" data-i18n-alt="gallery.alt3" loading="lazy"></a>
+      <a href="assets/gallery-4.png" target="_blank" rel="noopener"><img src="assets/gallery-4.png" alt="Grupo grande de fiesta junto a la alberca" data-i18n-alt="gallery.alt4" loading="lazy"></a>
     </div>
   </div>
 </section>
@@ -492,20 +524,20 @@
 <section class="price">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Precio</p>
-      <h2>Una noche completa, un solo pago</h2>
+      <p class="eyebrow" data-i18n="price.eyebrow">Precio</p>
+      <h2 data-i18n="price.h2">Una noche completa, un solo pago</h2>
     </div>
     <div class="price-card">
       <div class="price-tag">
         <div class="amount">$500</div>
-        <div class="curr">pesos MXN / persona</div>
+        <div class="curr" data-i18n="price.currency">pesos MXN / persona</div>
       </div>
       <ul class="price-list">
-        <li>50 minutos de barra libre para arrancar</li>
-        <li>Juegos y retos para romper el hielo</li>
-        <li>Acceso guiado a 4 bares y clubs de Zicatela</li>
-        <li>Guía bilingüe (español / inglés) toda la noche</li>
-        <li>Grupo internacional — viajas solo y sales acompañado</li>
+        <li data-i18n="price.item1">50 minutos de barra libre para arrancar</li>
+        <li data-i18n="price.item2">Juegos y retos para romper el hielo</li>
+        <li data-i18n="price.item3">Acceso guiado a 4 bares y clubs de Zicatela</li>
+        <li data-i18n="price.item4">Guía bilingüe (español / inglés) toda la noche</li>
+        <li data-i18n="price.item5">Grupo internacional — viajas solo y sales acompañado</li>
       </ul>
     </div>
   </div>
@@ -515,29 +547,29 @@
 <section class="faq">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Antes de reservar</p>
-      <h2>Preguntas frecuentes</h2>
+      <p class="eyebrow" data-i18n="faq.eyebrow">Antes de reservar</p>
+      <h2 data-i18n="faq.h2">Preguntas frecuentes</h2>
     </div>
     <div class="faq-list">
       <details class="faq-item" open>
-        <summary>¿Dónde es el punto de encuentro?</summary>
-        <p>En Surf Nest Hostel, a las 8:30 PM. De ahí arrancamos juntos toda la ruta.</p>
+        <summary data-i18n="faq.q1">¿Dónde es el punto de encuentro?</summary>
+        <p data-i18n="faq.a1">En Surf Nest Hostel, a las 8:30 PM. De ahí arrancamos juntos toda la ruta.</p>
       </details>
       <details class="faq-item">
-        <summary>¿Cuál es la edad mínima?</summary>
-        <p>18 años. Es un tour de vida nocturna con barra libre incluida.</p>
+        <summary data-i18n="faq.q2">¿Cuál es la edad mínima?</summary>
+        <p data-i18n="faq.a2">18 años. Es un tour de vida nocturna con barra libre incluida.</p>
       </details>
       <details class="faq-item">
-        <summary>¿Puedo ir solo/a?</summary>
-        <p>Sí — de hecho la mayoría llega sola o en grupos pequeños. Es una de las mejores formas de conocer gente nueva en Puerto.</p>
+        <summary data-i18n="faq.q3">¿Puedo ir solo/a?</summary>
+        <p data-i18n="faq.a3">Sí — de hecho la mayoría llega sola o en grupos pequeños. Es una de las mejores formas de conocer gente nueva en Puerto.</p>
       </details>
       <details class="faq-item">
-        <summary>¿Qué días hay tour?</summary>
-        <p>Viernes y sábado, todas las semanas.</p>
+        <summary data-i18n="faq.q4">¿Qué días hay tour?</summary>
+        <p data-i18n="faq.a4">Viernes y sábado, todas las semanas.</p>
       </details>
       <details class="faq-item">
-        <summary>¿Cómo reservo mi lugar?</summary>
-        <p>Directo por WhatsApp o por Instagram — te confirmamos cupo y forma de pago al momento.</p>
+        <summary data-i18n="faq.q5">¿Cómo reservo mi lugar?</summary>
+        <p data-i18n="faq.a5">Directo por WhatsApp o por Instagram — te confirmamos cupo y forma de pago al momento.</p>
       </details>
     </div>
   </div>
@@ -546,14 +578,14 @@
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="wrap">
-    <h2>Nos vemos en Surf Nest, 8:30 PM</h2>
-    <p class="script">viernes o sábado — tú eliges</p>
+    <h2 data-i18n="finalCta.h2">Nos vemos en Surf Nest, 8:30 PM</h2>
+    <p class="script" data-i18n="finalCta.script">viernes o sábado — tú eliges</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://wa.me/529542027701?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20Puerto%20Pub%20Crawl" target="_blank" rel="noopener">
-        Reservar mi lugar
+        <span data-i18n="finalCta.primary">Reservar mi lugar</span>
       </a>
       <a class="btn btn-ghost" href="https://instagram.com/pub_crawl_puerto" target="_blank" rel="noopener">
-        Ver Instagram
+        <span data-i18n="finalCta.ghost">Ver Instagram</span>
       </a>
     </div>
   </div>
@@ -561,7 +593,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Puerto Pub Crawl · Zicatela, Puerto Escondido, Oaxaca</p>
+    <p data-i18n="footer.tagline">Puerto Pub Crawl · Zicatela, Puerto Escondido, Oaxaca</p>
     <p><a href="https://wa.me/529542027701" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://instagram.com/pub_crawl_puerto" target="_blank" rel="noopener">@pub_crawl_puerto</a></p>
   </div>
 </footer>
@@ -584,6 +616,203 @@
       }
     });
   });
+
+  const translations = {
+    es: {
+      "hero.eyebrow": "Zicatela · Puerto Escondido, Oaxaca",
+      "hero.tagline": "la ruta tour de fiesta más comentada de Puerto",
+      "hero.lede": "Barra libre, retos y una ruta guiada por los mejores bares y clubs de la playa. Tour bilingüe: conoces mexicanos y viajeros de todo el mundo en un ambiente relajado y respetuoso.",
+      "hero.ctaWhatsapp": "Reservar por WhatsApp",
+      "hero.ctaViewRoute": "Ver la ruta",
+      "hero.trustDays": "Viernes y sábado",
+      "hero.trustIncluded": "todo incluido",
+      "hero.trustFollow": "Sigue la fiesta en",
+      "hero.scrollCue": "Desliza ↓",
+
+      "pillars.eyebrow": "Por qué unirte",
+      "pillars.h2": "No es un tour, es cómo se sale de fiesta en Puerto",
+      "pillars.body": "Llegamos a Puerto Escondido buscando dónde salir y encontramos esto: la única ruta de fiesta guiada de la zona, hecha por gente que vive y respira Zicatela.",
+      "pillars.p1.title": "Bilingüe, de verdad",
+      "pillars.p1.body": "Guías en español e inglés. El grupo mezcla mexicanos de todo el país con viajeros de medio mundo — así se conoce gente en serio.",
+      "pillars.p2.title": "Ambiente cuidado",
+      "pillars.p2.body": "Grupos con buena vibra y respeto entre todos. Vas solo, en pareja o en grupo y sales acompañado.",
+      "pillars.p3.title": "Todo incluido, sin sorpresas",
+      "pillars.p3.body": "Barra libre para arrancar, juegos para romper el hielo, y acceso a 4 lugares distintos en una sola noche.",
+
+      "route.eyebrow": "La ruta",
+      "route.h2": "Una noche, cuatro paradas",
+      "route.body": "Empezamos con barra libre y juegos para calentar motores, y de ahí seguimos la ruta por Zicatela hasta cerrar en un club distinto cada noche.",
+      "route.dayFriday": "Viernes",
+      "route.daySaturday": "Sábado",
+      "route.viernes.stop1.title": "Open bar + drinking games",
+      "route.viernes.stop1.body": "50 minutos de barra libre y juegos para romper el hielo con el grupo.",
+      "route.viernes.stop2.title": "Torneo de beer pong",
+      "route.viernes.stop2.body": "Se arma el primer reto de la noche — equipos, mesas y mucha risa.",
+      "route.viernes.stop3.title": "Reggaetón en la playa",
+      "route.viernes.stop3.body": "Bajamos a pie de playa a bailar con los pies en la arena.",
+      "route.viernes.stop4.title": "After techno duro",
+      "route.viernes.stop4.body": "Cerramos la noche fuerte para quien todavía tiene batería.",
+      "route.sabado.stop1.title": "Open bar + drinking games",
+      "route.sabado.stop1.body": "50 minutos de barra libre y juegos para romper el hielo con el grupo.",
+      "route.sabado.stop2.title": "Pool party",
+      "route.sabado.stop2.body": "Alberca, música y el segundo aire de la noche.",
+      "route.sabado.stop3.title": "Perro salvaje",
+      "route.sabado.stop3.body": "Hora y media en uno de los puntos más animados de la ruta.",
+      "route.sabado.stop4.title": "Reggaetón + techno",
+      "route.sabado.stop4.body": "Cerramos la noche a pie de playa, con todo el grupo junto.",
+
+      "gallery.eyebrow": "La fiesta, en fotos",
+      "gallery.h2": "Así se ve una noche de ruta",
+      "gallery.body": "Grupos internacionales, disfraces improvisados y muchas caras nuevas — esto es lo que te espera.",
+      "gallery.alt1": "Grupo de viajeros posando de noche en Puerto Pub Crawl",
+      "gallery.alt2": "Grupo grande celebrando en un bar decorado de Puerto Escondido",
+      "gallery.alt3": "Amigas sonriendo durante el pub crawl",
+      "gallery.alt4": "Grupo grande de fiesta junto a la alberca",
+
+      "price.eyebrow": "Precio",
+      "price.h2": "Una noche completa, un solo pago",
+      "price.currency": "pesos MXN / persona",
+      "price.item1": "50 minutos de barra libre para arrancar",
+      "price.item2": "Juegos y retos para romper el hielo",
+      "price.item3": "Acceso guiado a 4 bares y clubs de Zicatela",
+      "price.item4": "Guía bilingüe (español / inglés) toda la noche",
+      "price.item5": "Grupo internacional — viajas solo y sales acompañado",
+
+      "faq.eyebrow": "Antes de reservar",
+      "faq.h2": "Preguntas frecuentes",
+      "faq.q1": "¿Dónde es el punto de encuentro?",
+      "faq.a1": "En Surf Nest Hostel, a las 8:30 PM. De ahí arrancamos juntos toda la ruta.",
+      "faq.q2": "¿Cuál es la edad mínima?",
+      "faq.a2": "18 años. Es un tour de vida nocturna con barra libre incluida.",
+      "faq.q3": "¿Puedo ir solo/a?",
+      "faq.a3": "Sí — de hecho la mayoría llega sola o en grupos pequeños. Es una de las mejores formas de conocer gente nueva en Puerto.",
+      "faq.q4": "¿Qué días hay tour?",
+      "faq.a4": "Viernes y sábado, todas las semanas.",
+      "faq.q5": "¿Cómo reservo mi lugar?",
+      "faq.a5": "Directo por WhatsApp o por Instagram — te confirmamos cupo y forma de pago al momento.",
+
+      "finalCta.h2": "Nos vemos en Surf Nest, 8:30 PM",
+      "finalCta.script": "viernes o sábado — tú eliges",
+      "finalCta.primary": "Reservar mi lugar",
+      "finalCta.ghost": "Ver Instagram",
+
+      "footer.tagline": "Puerto Pub Crawl · Zicatela, Puerto Escondido, Oaxaca"
+    },
+    en: {
+      "hero.eyebrow": "Zicatela · Puerto Escondido, Oaxaca",
+      "hero.tagline": "the most talked-about party route in Puerto",
+      "hero.lede": "Open bar, games, and a guided route through the best bars and clubs on the beach. Bilingual tour: meet Mexicans and travelers from all over the world in a chill, respectful vibe.",
+      "hero.ctaWhatsapp": "Book via WhatsApp",
+      "hero.ctaViewRoute": "See the route",
+      "hero.trustDays": "Friday & Saturday",
+      "hero.trustIncluded": "all included",
+      "hero.trustFollow": "Follow the party on",
+      "hero.scrollCue": "Scroll ↓",
+
+      "pillars.eyebrow": "Why join",
+      "pillars.h2": "It's not a tour, it's how Puerto parties",
+      "pillars.body": "We showed up in Puerto Escondido looking for somewhere to go out and found this instead: the only guided party route in town, run by people who live and breathe Zicatela.",
+      "pillars.p1.title": "Actually bilingual",
+      "pillars.p1.body": "Guides in Spanish and English. The group mixes Mexicans from all over the country with travelers from half the world — that's how you really meet people.",
+      "pillars.p2.title": "A vibe that's looked after",
+      "pillars.p2.body": "Good energy and respect across the board. Come solo, as a couple, or with a group — you'll leave with company either way.",
+      "pillars.p3.title": "All-inclusive, no surprises",
+      "pillars.p3.body": "Open bar to kick things off, icebreaker games, and access to 4 different spots in a single night.",
+
+      "route.eyebrow": "The route",
+      "route.h2": "One night, four stops",
+      "route.body": "We start with open bar and icebreaker games to warm things up, then follow the route through Zicatela to close out at a different club each night.",
+      "route.dayFriday": "Friday",
+      "route.daySaturday": "Saturday",
+      "route.viernes.stop1.title": "Open bar + drinking games",
+      "route.viernes.stop1.body": "50 minutes of open bar and icebreaker games with the group.",
+      "route.viernes.stop2.title": "Beer pong tournament",
+      "route.viernes.stop2.body": "The night's first challenge kicks off — teams, tables, and plenty of laughs.",
+      "route.viernes.stop3.title": "Reggaeton on the beach",
+      "route.viernes.stop3.body": "We head down to the beach to dance with our feet in the sand.",
+      "route.viernes.stop4.title": "Hard techno afterparty",
+      "route.viernes.stop4.body": "We close the night out strong for whoever's still got energy left.",
+      "route.sabado.stop1.title": "Open bar + drinking games",
+      "route.sabado.stop1.body": "50 minutes of open bar and icebreaker games with the group.",
+      "route.sabado.stop2.title": "Pool party",
+      "route.sabado.stop2.body": "Pool, music, and the night's second wind.",
+      "route.sabado.stop3.title": "Wild Dog Hour",
+      "route.sabado.stop3.body": "Ninety minutes at one of the liveliest stops on the route.",
+      "route.sabado.stop4.title": "Reggaeton + techno",
+      "route.sabado.stop4.body": "We close the night out on the beach, the whole group together.",
+
+      "gallery.eyebrow": "The party, in photos",
+      "gallery.h2": "This is what a night on the route looks like",
+      "gallery.body": "International crews, spontaneous costumes, and plenty of new faces — that's what's waiting for you.",
+      "gallery.alt1": "Group of travelers posing at night during Puerto Pub Crawl",
+      "gallery.alt2": "Big group celebrating at a decorated bar in Puerto Escondido",
+      "gallery.alt3": "Friends smiling during the pub crawl",
+      "gallery.alt4": "Big group partying by the pool",
+
+      "price.eyebrow": "Price",
+      "price.h2": "One full night, one simple price",
+      "price.currency": "pesos MXN / person",
+      "price.item1": "50 minutes of open bar to kick things off",
+      "price.item2": "Icebreaker games and challenges",
+      "price.item3": "Guided access to 4 bars and clubs in Zicatela",
+      "price.item4": "Bilingual guide (Spanish / English) all night",
+      "price.item5": "International group — come solo, leave with new friends",
+
+      "faq.eyebrow": "Before you book",
+      "faq.h2": "Frequently asked questions",
+      "faq.q1": "Where's the meeting point?",
+      "faq.a1": "At Surf Nest Hostel, 8:30 PM. We kick off the whole route together from there.",
+      "faq.q2": "What's the minimum age?",
+      "faq.a2": "18+. It's a nightlife tour with open bar included.",
+      "faq.q3": "Can I come alone?",
+      "faq.a3": "Absolutely — most people actually show up solo or in small groups. It's one of the best ways to meet new people in Puerto.",
+      "faq.q4": "Which days do you run?",
+      "faq.a4": "Friday and Saturday, every week.",
+      "faq.q5": "How do I book my spot?",
+      "faq.a5": "Straight through WhatsApp or Instagram — we'll confirm your spot and payment method right away.",
+
+      "finalCta.h2": "See you at Surf Nest, 8:30 PM",
+      "finalCta.script": "Friday or Saturday — you pick",
+      "finalCta.primary": "Reserve my spot",
+      "finalCta.ghost": "Check us out on Instagram",
+
+      "footer.tagline": "Puerto Pub Crawl · Zicatela, Puerto Escondido, Oaxaca"
+    }
+  };
+
+  const langButtons = document.querySelectorAll('.lang-btn');
+
+  function applyLanguage(lang){
+    const dict = translations[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const value = dict[el.dataset.i18n];
+      if(value !== undefined) el.textContent = value;
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const value = dict[el.dataset.i18nAlt];
+      if(value !== undefined) el.alt = value;
+    });
+    langButtons.forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    localStorage.setItem('ppc-lang', lang);
+  }
+
+  function detectInitialLanguage(){
+    const saved = localStorage.getItem('ppc-lang');
+    if(saved === 'es' || saved === 'en') return saved;
+    const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    return nav.startsWith('es') ? 'es' : 'en';
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+
+  applyLanguage(detectInitialLanguage());
 </script>
 
 </body>
